@@ -1,0 +1,16 @@
+node_modules/
+.env
+.env.*
+!.env.example
+data/
+test-results/
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+*.zip
+campaign-export*.json
+# Private historical test notes; customer guides contain sanitized results.
+CLOUD_TESTING.md
+TESTING.md
+LEGACY_LOCAL.md

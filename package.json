@@ -1,0 +1,1 @@
+{"name":"szmarketing-ma-studio","private":true,"type":"module","scripts":{"start":"node --env-file-if-exists=.env server.mjs","test":"node --test test.mjs"},"dependencies":{"lucide":"^0.468.0"},"devDependencies":{"playwright":"^1.55.0"}}
