@@ -84,7 +84,7 @@ http.createServer(async(req,res)=>{const respond=(status,obj)=>{res.writeHead(st
  const u=new URL(req.url,'http://localhost');if(!['127.0.0.1','localhost'].includes((req.headers.host||'').split(':')[0]))return respond(403,{error:'Local access only'});
  if(req.method==='POST'&&req.headers.origin&&!['http://127.0.0.1:'+port,'http://localhost:'+port].includes(req.headers.origin))return respond(403,{error:'Origin rejected'});
  if(u.pathname==='/api/status')return respond(200,{configured:!!(process.env.MA_AGENT_ID&&process.env.MA_ENVIRONMENT_ID),cloudConfigured:!!(process.env.CLOUD_AGENT_ID&&process.env.CLOUD_ENVIRONMENT_ID),paid:process.env.ENABLE_PAID_RUNS==='true',agent:process.env.CLOUD_AGENT_ID||process.env.MA_AGENT_ID||null,credentials:process.env.ARK_API_KEY?'server environment':'ArkCLI profile'});
- if(u.pathname==='/api/jobs'&&req.method==='GET')return respond(200,Object.values(jobs).reverse());
+ if(u.pathname==='/api/jobs'&&req.method==='GET')return respond(200,Object.values(jobs).filter(job=>!job.archived).reverse());
  if(req.method==='POST'){
   let buf='';for await(const chunk of req){buf+=chunk;if(buf.length>20000)return respond(413,{error:'Request too large'});}const body=JSON.parse(buf||'{}');
   if(u.pathname==='/api/jobs'){const brief=validateBrief(body);const limits=cloudLimits(body);const id=randomUUID();jobs[id]={id,brief,limits,mode:'ma_cloud',created:new Date().toISOString(),steps:{},selected:0,busy:false};await save();return respond(201,jobs[id]);}

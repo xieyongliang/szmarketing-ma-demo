@@ -2,6 +2,12 @@
 
 Customer setup and reproduction: [English](CUSTOMER_DEMO_EN.md) | [中文](CUSTOMER_DEMO_ZH.md).
 
+![Latest cloud retest workspace](docs/assets/ui-workspace.png)
+
+See the guides for UI screenshots and the [asset inventory](docs/assets/README.md). The September 28 cloud retest archived all four images and two videos, plus a [sanitized evaluation report](docs/assets/retest-20260928/result.json). Click the preview to open the selected round's original video:
+
+[![Selected video](docs/assets/retest-20260928/round-2-video-poster.jpg)](docs/assets/retest-20260928/round-2-video.mp4)
+
 New campaigns execute generation, media analysis, model scoring and bounded revision inside MA Cloud. The localhost backend only creates a Session, sends the brief, observes events and renders the returned manifest. It does not call generation or evaluation APIs for cloud campaigns.
 
 ```text
@@ -74,10 +80,18 @@ npm test
 python3 test-cloud.py
 ```
 
-The September 26, 2026 cloud test passed in round 1 with a model-reported score of 5/5, four required checks passing, and no audit conflicts. It used three maximum rounds, a 4.5 target, and watermark disabled. Later-round selection and adjudication were not exercised by this run. The exported research list was empty; market research is not demonstrated by this result. Model acceptance is not human inspection or publishing approval. See the customer guides for the complete verification boundaries.
+The September 28, 2026 cloud retest scored 3.333333/5 in round 1: its design included a rendered mug instead of isolated artwork. MA revised the prompts and round 2 passed all eight required checks with a model score of 5/5. It stopped early, using three maximum rounds, a 4.5 target, and watermark disabled. Both rounds completed independent evaluation and audit without conflicts. Selection at the round limit and adjudication were not exercised. Both downloaded videos were independently probed: 720x1280, 5.041667 seconds, no audio stream. The exported research list was empty; market research is not demonstrated. Model acceptance is not publishing approval. See the guides for verification boundaries.
 
 Local regression coverage includes 26 Node.js tests and 29 Python tests. These tests use mocks rather than paid model calls.
 
 ## Security and distribution
 
-Private credentials, generated assets, signed URLs, and historical internal test notes are excluded from Git. Use your own resources and dedicated test key. Never commit `.env`, `data/`, authentication caches, or complete Environment configurations. Campaign exports may contain private briefs and signed media URLs; redact them before sharing. This repository is a demo, not a production security or compliance solution.
+Archive a completed cloud Campaign immediately, while its media URLs remain valid:
+
+```bash
+node archive-campaign.mjs <CAMPAIGN_ID> <ARCHIVE_NAME>
+```
+
+This downloads every evaluated round's images and video into `docs/assets/<ARCHIVE_NAME>/`, then writes a sanitized `result.json` with prompts, evaluations, and SHA-256 file checksums. It does not start model calls. Download errors stop the command instead of claiming a complete archive. Review the brief and evidence for customer-sensitive content before sharing. The original private Campaign JSON remains in `data/`.
+
+Private credentials, raw run data, signed URLs, and historical internal test notes are excluded from Git. The reviewed demo media in `docs/assets/` is intentionally included for reproducibility. Use your own resources and dedicated test key. Never commit `.env`, `data/`, authentication caches, or complete Environment configurations. Campaign exports may contain private briefs and signed media URLs; redact them before sharing. This repository is a demo, not a production security or compliance solution.

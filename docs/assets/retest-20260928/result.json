@@ -1,0 +1,690 @@
+{
+  "archived_at": "2026-09-28T14:03:30.344Z",
+  "run_created": "2026-09-28T13:47:55.503Z",
+  "note": "Sanitized documentation copy; local filenames replace signed URLs. Not a raw manifest for replay or validation.",
+  "brief": {
+    "name": "MA Cloud archived-media retest 2026-09-28",
+    "product": "Mug",
+    "platform": "TikTok",
+    "audience": "US gift shoppers, ages 25–44",
+    "brief": "Create an original personalized ceramic mug gift with a simple blue botanical line drawing and the exact large text ALEX. Deliver isolated flat print artwork on a plain white canvas, a lifestyle mockup with the print facing the camera, and a silent 5-second vertical product showcase. Keep the exact artwork and ALEX lettering readable and consistent across all assets. No extra text, trademarks, music, invented claims or customer testimonials."
+  },
+  "limits": {
+    "max_rounds": 3,
+    "target_score": 4.5,
+    "watermark": false
+  },
+  "result": {
+    "status": "completed",
+    "brief": "Create an original personalized ceramic mug gift with a simple blue botanical line drawing and the exact large text ALEX. Deliver isolated flat print artwork on a plain white canvas, a lifestyle mockup with the print facing the camera, and a silent 5-second vertical product showcase. Keep the exact artwork and ALEX lettering readable and consistent across all assets. No extra text, trademarks, music, invented claims or customer testimonials.",
+    "research": [],
+    "max_rounds": 3,
+    "target_score": 4.5,
+    "generate_audio": false,
+    "criteria": [
+      {
+        "id": "deliverable_design",
+        "description": "Isolated flat mug print artwork is presented on a plain solid white canvas with no surrounding elements",
+        "source_requirement": "Deliver isolated flat print artwork on a plain white canvas",
+        "required": true,
+        "priority": 1,
+        "weight": 10,
+        "asset_refs": [
+          "design"
+        ]
+      },
+      {
+        "id": "design_artwork_content",
+        "description": "Flat design contains only a simple blue botanical line drawing plus large clearly legible uppercase text that reads exactly \"ALEX\" with no additional elements",
+        "source_requirement": "original personalized ceramic mug gift with a simple blue botanical line drawing and the exact large text ALEX. No extra text, trademarks",
+        "required": true,
+        "priority": 1,
+        "weight": 15,
+        "asset_refs": [
+          "design"
+        ]
+      },
+      {
+        "id": "deliverable_mockup",
+        "description": "Lifestyle mockup shows a physical ceramic mug with the printed side facing directly toward the camera",
+        "source_requirement": "lifestyle mockup with the print facing the camera",
+        "required": true,
+        "priority": 1,
+        "weight": 10,
+        "asset_refs": [
+          "mockup"
+        ]
+      },
+      {
+        "id": "mockup_consistency",
+        "description": "Print on the mockup matches the flat design artwork exactly, including identical blue botanical line drawing and fully readable \"ALEX\" text",
+        "source_requirement": "Keep the exact artwork and ALEX lettering readable and consistent across all assets",
+        "required": true,
+        "priority": 1,
+        "weight": 15,
+        "asset_refs": [
+          "mockup"
+        ]
+      },
+      {
+        "id": "deliverable_video",
+        "description": "A silent 5-second vertical (9:16 aspect ratio) product showcase video exists with no audio track",
+        "source_requirement": "silent 5-second vertical product showcase",
+        "required": true,
+        "priority": 1,
+        "weight": 10,
+        "asset_refs": [
+          "video"
+        ]
+      },
+      {
+        "id": "video_consistency",
+        "description": "All frames of the video show the mug with identical consistent artwork, including clearly readable \"ALEX\" text and matching blue botanical line drawing",
+        "source_requirement": "Keep the exact artwork and ALEX lettering readable and consistent across all assets",
+        "required": true,
+        "priority": 1,
+        "weight": 15,
+        "asset_refs": [
+          "video"
+        ]
+      },
+      {
+        "id": "no_extra_content",
+        "description": "No asset contains extra text, trademarks, logos, customer testimonials, or invented product claims",
+        "source_requirement": "No extra text, trademarks, music, invented claims or customer testimonials",
+        "required": true,
+        "priority": 2,
+        "weight": 10,
+        "asset_refs": [
+          "design",
+          "mockup",
+          "video"
+        ]
+      },
+      {
+        "id": "no_audio_present",
+        "description": "The video has no audio, music, or sound effects of any kind",
+        "source_requirement": "silent 5-second vertical product showcase",
+        "required": true,
+        "priority": 2,
+        "weight": 5,
+        "asset_refs": [
+          "video"
+        ]
+      }
+    ],
+    "watermark": false,
+    "rounds": [
+      {
+        "number": 1,
+        "prompts": {
+          "design": "Isolated flat print artwork for a ceramic mug, centered on a plain solid pure white canvas. The design consists only of a simple minimalist blue line art botanical plant drawing next to large bold clear uppercase text that says exactly \"ALEX\". No other elements, no borders, no shadows, no extra text, no logos, no artifacts.",
+          "mockup": "Lifestyle product mockup of a matte white ceramic mug sitting on a neutral light surface, the mug is facing directly toward the camera so the full print is completely visible. The print on the mug matches the flat design exactly: simple blue botanical line drawing plus large readable \"ALEX\" text. Soft natural daylight, clean uncluttered background, no extra objects or text in the frame.",
+          "video": "5 second silent vertical 9:16 TikTok product showcase of the ceramic mug. Slow smooth subtle pan across the mug keeping the printed side facing the camera the entire time. The mug artwork is consistent across all frames: simple blue botanical line drawing, large clearly readable \"ALEX\" text. No overlays, no on-screen text, no music, no sound, plain neutral background."
+        },
+        "design": {
+          "url": "round-1-design.jpg",
+          "usage": {
+            "generated_images": 1,
+            "output_tokens": 16384,
+            "total_tokens": 16384
+          }
+        },
+        "mockup": {
+          "url": "round-1-mockup.jpg",
+          "usage": {
+            "generated_images": 1,
+            "output_tokens": 16384,
+            "total_tokens": 16384
+          }
+        },
+        "submitted_at": 1790603390.733716,
+        "video": {
+          "url": "round-1-video.mp4",
+          "usage": {
+            "completion_tokens": 108900,
+            "total_tokens": 108900
+          }
+        },
+        "evaluation_attempts": 1,
+        "evaluation": {
+          "report": {
+            "summary": "The submission passes all requirements for the video deliverables, including consistent artwork, silent vertical format, and no extra content. However, the required isolated flat print artwork was submitted incorrectly as a composite mug render with floating displaced text, and the static lifestyle mockup also contains a rendering error with oversized text floating outside the mug boundary, instead of the print being applied directly to the mug surface. The artwork content itself (blue botanical drawing + ALEX text) is correct across all assets.",
+            "checks": [
+              {
+                "id": "deliverable_design",
+                "status": "fail",
+                "score": 0,
+                "evidence": "The submitted design asset is not an isolated flat print artwork on a plain white canvas: it is instead a composite render of a ceramic mug, with the 'ALEX' text rendered floating outside the physical boundary of the mug. No standalone flat print file is provided.",
+                "improvement": "Deliver the actual isolated flat print artwork only, showing only the intended mug print elements on a plain solid white background, with no mug render included."
+              },
+              {
+                "id": "design_artwork_content",
+                "status": "pass",
+                "score": 5,
+                "evidence": "The only print elements present in the design asset are the requested simple blue botanical line drawing and large clearly legible uppercase 'ALEX' text, with no additional elements, extra text, or trademarks present.",
+                "improvement": "No changes needed to the artwork content itself, only to the format of the delivered design file."
+              },
+              {
+                "id": "deliverable_mockup",
+                "status": "fail",
+                "score": 1,
+                "evidence": "The static mockup asset contains a rendering error where oversized 'ALEX' text floats outside of the ceramic mug boundary, rather than being printed onto the face of the mug. The mug itself is visible but the print is not applied correctly.",
+                "improvement": "Correct the mockup render to apply the print artwork directly to the surface of the ceramic mug, with no displaced text elements extending outside the mug edge."
+              },
+              {
+                "id": "mockup_consistency",
+                "status": "fail",
+                "score": 1,
+                "evidence": "The mockup does not show the print applied to the mug, so the artwork cannot be confirmed to match the flat design, with text elements displaced outside the mug surface.",
+                "improvement": "Update the mockup so the applied print matches the flat design exactly, with the botanical drawing and 'ALEX' text positioned correctly on the mug face."
+              },
+              {
+                "id": "deliverable_video",
+                "status": "pass",
+                "score": 5,
+                "evidence": "The submitted video is a ~5 second vertical 9:16 aspect ratio silent product showcase of the mug, matching all deliverable requirements.",
+                "improvement": "No changes needed."
+              },
+              {
+                "id": "video_consistency",
+                "status": "pass",
+                "score": 5,
+                "evidence": "All frames of the video show the mug with correctly applied consistent artwork, including clearly readable 'ALEX' text and matching blue botanical line drawing, as the mug slowly rotates.",
+                "improvement": "No changes needed."
+              },
+              {
+                "id": "no_extra_content",
+                "status": "pass",
+                "score": 5,
+                "evidence": "None of the submitted assets contain extra text, trademarks, logos, customer testimonials, or invented product claims, only the requested artwork elements are present.",
+                "improvement": "No changes needed."
+              },
+              {
+                "id": "no_audio_present",
+                "status": "pass",
+                "score": 5,
+                "evidence": "The submitted video has no audio track, no music or sound effects, it is fully silent as required.",
+                "improvement": "No changes needed."
+              }
+            ],
+            "uncovered_requirements": [],
+            "release_checks": [
+              {
+                "name": "All required deliverables meet acceptance criteria",
+                "status": "fail",
+                "evidence": "The flat design and static mockup deliverables have critical formatting/rendering errors, only the video deliverable meets requirements."
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 9983,
+            "output_tokens": 3488,
+            "total_tokens": 13471,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 2508
+            }
+          }
+        },
+        "audit_attempts": 1,
+        "audit": {
+          "report": {
+            "conflicts": [],
+            "uncovered_requirements": []
+          },
+          "usage": {
+            "input_tokens": 10799,
+            "output_tokens": 736,
+            "total_tokens": 11535,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 724
+            }
+          }
+        },
+        "review": {
+          "checks": [
+            {
+              "id": "deliverable_design",
+              "status": "fail",
+              "score": 0,
+              "evidence": "The submitted design asset is not an isolated flat print artwork on a plain white canvas: it is instead a composite render of a ceramic mug, with the 'ALEX' text rendered floating outside the physical boundary of the mug. No standalone flat print file is provided.",
+              "improvement": "Deliver the actual isolated flat print artwork only, showing only the intended mug print elements on a plain solid white background, with no mug render included.",
+              "name": "Isolated flat mug print artwork is presented on a plain solid white canvas with no surrounding elements",
+              "required": true,
+              "priority": 1,
+              "weight": 10
+            },
+            {
+              "id": "design_artwork_content",
+              "status": "pass",
+              "score": 5,
+              "evidence": "The only print elements present in the design asset are the requested simple blue botanical line drawing and large clearly legible uppercase 'ALEX' text, with no additional elements, extra text, or trademarks present.",
+              "improvement": "No changes needed to the artwork content itself, only to the format of the delivered design file.",
+              "name": "Flat design contains only a simple blue botanical line drawing plus large clearly legible uppercase text that reads exactly \"ALEX\" with no additional elements",
+              "required": true,
+              "priority": 1,
+              "weight": 15
+            },
+            {
+              "id": "deliverable_mockup",
+              "status": "fail",
+              "score": 1,
+              "evidence": "The static mockup asset contains a rendering error where oversized 'ALEX' text floats outside of the ceramic mug boundary, rather than being printed onto the face of the mug. The mug itself is visible but the print is not applied correctly.",
+              "improvement": "Correct the mockup render to apply the print artwork directly to the surface of the ceramic mug, with no displaced text elements extending outside the mug edge.",
+              "name": "Lifestyle mockup shows a physical ceramic mug with the printed side facing directly toward the camera",
+              "required": true,
+              "priority": 1,
+              "weight": 10
+            },
+            {
+              "id": "mockup_consistency",
+              "status": "fail",
+              "score": 1,
+              "evidence": "The mockup does not show the print applied to the mug, so the artwork cannot be confirmed to match the flat design, with text elements displaced outside the mug surface.",
+              "improvement": "Update the mockup so the applied print matches the flat design exactly, with the botanical drawing and 'ALEX' text positioned correctly on the mug face.",
+              "name": "Print on the mockup matches the flat design artwork exactly, including identical blue botanical line drawing and fully readable \"ALEX\" text",
+              "required": true,
+              "priority": 1,
+              "weight": 15
+            },
+            {
+              "id": "deliverable_video",
+              "status": "pass",
+              "score": 5,
+              "evidence": "The submitted video is a ~5 second vertical 9:16 aspect ratio silent product showcase of the mug, matching all deliverable requirements.",
+              "improvement": "No changes needed.",
+              "name": "A silent 5-second vertical (9:16 aspect ratio) product showcase video exists with no audio track",
+              "required": true,
+              "priority": 1,
+              "weight": 10
+            },
+            {
+              "id": "video_consistency",
+              "status": "pass",
+              "score": 5,
+              "evidence": "All frames of the video show the mug with correctly applied consistent artwork, including clearly readable 'ALEX' text and matching blue botanical line drawing, as the mug slowly rotates.",
+              "improvement": "No changes needed.",
+              "name": "All frames of the video show the mug with identical consistent artwork, including clearly readable \"ALEX\" text and matching blue botanical line drawing",
+              "required": true,
+              "priority": 1,
+              "weight": 15
+            },
+            {
+              "id": "no_extra_content",
+              "status": "pass",
+              "score": 5,
+              "evidence": "None of the submitted assets contain extra text, trademarks, logos, customer testimonials, or invented product claims, only the requested artwork elements are present.",
+              "improvement": "No changes needed.",
+              "name": "No asset contains extra text, trademarks, logos, customer testimonials, or invented product claims",
+              "required": true,
+              "priority": 2,
+              "weight": 10
+            },
+            {
+              "id": "no_audio_present",
+              "status": "pass",
+              "score": 5,
+              "evidence": "The submitted video has no audio track, no music or sound effects, it is fully silent as required.",
+              "improvement": "No changes needed.",
+              "name": "The video has no audio, music, or sound effects of any kind",
+              "required": true,
+              "priority": 2,
+              "weight": 5
+            }
+          ],
+          "score": 3.333333,
+          "quality_gate": "blocked",
+          "blocking_checks": [
+            "deliverable_design",
+            "deliverable_mockup",
+            "mockup_consistency"
+          ],
+          "uncovered_requirements": [],
+          "priority_fix": "Isolated flat mug print artwork is presented on a plain solid white canvas with no surrounding elements: Deliver the actual isolated flat print artwork only, showing only the intended mug print elements on a plain solid white background, with no mug render included.",
+          "release_checks": [
+            {
+              "name": "All required deliverables meet acceptance criteria",
+              "status": "fail",
+              "evidence": "The flat design and static mockup deliverables have critical formatting/rendering errors, only the video deliverable meets requirements."
+            }
+          ],
+          "review_source": "independent_evaluator"
+        },
+        "evidence": {
+          "text": "{\n  \"summary\": \"The submission passes all requirements for the video deliverables, including consistent artwork, silent vertical format, and no extra content. However, the required isolated flat print artwork was submitted incorrectly as a composite mug render with floating displaced text, and the static lifestyle mockup also contains a rendering error with oversized text floating outside the mug boundary, instead of the print being applied directly to the mug surface. The artwork content itself (blue botanical drawing + ALEX text) is correct across all assets.\",\n  \"checks\": [\n    {\n      \"id\": \"deliverable_design\",\n      \"status\": \"fail\",\n      \"score\": 0,\n      \"evidence\": \"The submitted design asset is not an isolated flat print artwork on a plain white canvas: it is instead a composite render of a ceramic mug, with the 'ALEX' text rendered floating outside the physical boundary of the mug. No standalone flat print file is provided.\",\n      \"improvement\": \"Deliver the actual isolated flat print artwork only, showing only the intended mug print elements on a plain solid white background, with no mug render included.\"\n    },\n    {\n      \"id\": \"design_artwork_content\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"The only print elements present in the design asset are the requested simple blue botanical line drawing and large clearly legible uppercase 'ALEX' text, with no additional elements, extra text, or trademarks present.\",\n      \"improvement\": \"No changes needed to the artwork content itself, only to the format of the delivered design file.\"\n    },\n    {\n      \"id\": \"deliverable_mockup\",\n      \"status\": \"fail\",\n      \"score\": 1,\n      \"evidence\": \"The static mockup asset contains a rendering error where oversized 'ALEX' text floats outside of the ceramic mug boundary, rather than being printed onto the face of the mug. The mug itself is visible but the print is not applied correctly.\",\n      \"improvement\": \"Correct the mockup render to apply the print artwork directly to the surface of the ceramic mug, with no displaced text elements extending outside the mug edge.\"\n    },\n    {\n      \"id\": \"mockup_consistency\",\n      \"status\": \"fail\",\n      \"score\": 1,\n      \"evidence\": \"The mockup does not show the print applied to the mug, so the artwork cannot be confirmed to match the flat design, with text elements displaced outside the mug surface.\",\n      \"improvement\": \"Update the mockup so the applied print matches the flat design exactly, with the botanical drawing and 'ALEX' text positioned correctly on the mug face.\"\n    },\n    {\n      \"id\": \"deliverable_video\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"The submitted video is a ~5 second vertical 9:16 aspect ratio silent product showcase of the mug, matching all deliverable requirements.\",\n      \"improvement\": \"No changes needed.\"\n    },\n    {\n      \"id\": \"video_consistency\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"All frames of the video show the mug with correctly applied consistent artwork, including clearly readable 'ALEX' text and matching blue botanical line drawing, as the mug slowly rotates.\",\n      \"improvement\": \"No changes needed.\"\n    },\n    {\n      \"id\": \"no_extra_content\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"None of the submitted assets contain extra text, trademarks, logos, customer testimonials, or invented product claims, only the requested artwork elements are present.\",\n      \"improvement\": \"No changes needed.\"\n    },\n    {\n      \"id\": \"no_audio_present\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"The submitted video has no audio track, no music or sound effects, it is fully silent as required.\",\n      \"improvement\": \"No changes needed.\"\n    }\n  ],\n  \"uncovered_requirements\": [],\n  \"release_checks\": [\n    {\n      \"name\": \"All required deliverables meet acceptance criteria\",\n      \"status\": \"fail\",\n      \"evidence\": \"The flat design and static mockup deliverables have critical formatting/rendering errors, only the video deliverable meets requirements.\"\n    }\n  ]\n}"
+        }
+      },
+      {
+        "number": 2,
+        "prompts": {
+          "design": "Standalone isolated flat vector print artwork only, no 3D objects, no mug renders, completely centered on a plain solid pure white canvas. The artwork contains only two elements: a thin simple minimalist blue botanical line drawing, and large perfectly legible uppercase text reading exactly 'ALEX' next to it. No shadows, no borders, no gradients, no other elements of any kind, it is a 2D print file only, no product render.",
+          "mockup": "Photorealistic lifestyle photo of a plain matte white ceramic coffee mug, the mug is positioned directly facing the camera so the entire front surface is fully visible. The print is printed flat onto the front face of the mug: the print consists of the simple blue botanical line drawing plus clearly printed 'ALEX' text, all entirely within the boundary of the mug's front surface, no floating text outside the mug. Soft natural daylight on a plain light neutral background, no other objects, no text overlays.",
+          "video": "5 second silent vertical 9:16 TikTok product showcase video of the ceramic mug. Slow gentle rotation of the mug keeping the printed side facing the camera the entire time. The artwork on the mug is consistent: simple blue botanical line drawing, clearly printed 'ALEX' text fully on the mug surface. No overlays, no text, no music, no sound, plain neutral background."
+        },
+        "design": {
+          "url": "round-2-design.jpg",
+          "usage": {
+            "generated_images": 1,
+            "output_tokens": 16384,
+            "total_tokens": 16384
+          }
+        },
+        "mockup": {
+          "url": "round-2-mockup.jpg",
+          "usage": {
+            "generated_images": 1,
+            "output_tokens": 16384,
+            "total_tokens": 16384
+          }
+        },
+        "submitted_at": 1790603783.3496797,
+        "video": {
+          "url": "round-2-video.mp4",
+          "usage": {
+            "completion_tokens": 108900,
+            "total_tokens": 108900
+          }
+        },
+        "evaluation_attempts": 1,
+        "evaluation": {
+          "report": {
+            "summary": "All required deliverables are successfully provided: the flat design artwork, lifestyle mug mockup, and 5-second vertical product showcase all meet requirements, artwork is consistent across all assets, no prohibited extra content is present.",
+            "checks": [
+              {
+                "id": "deliverable_design",
+                "status": "pass",
+                "score": 5,
+                "evidence": "The submitted design asset is an isolated flat print artwork placed on a plain solid white canvas with no surrounding elements.",
+                "improvement": "No changes needed, requirement is fully satisfied."
+              },
+              {
+                "id": "design_artwork_content",
+                "status": "pass",
+                "score": 5,
+                "evidence": "The flat design only contains a simple blue botanical line drawing and large clearly legible uppercase text reading exactly \"ALEX\", with no additional elements, extra text, or trademarks.",
+                "improvement": "No changes needed, requirement is fully satisfied."
+              },
+              {
+                "id": "deliverable_mockup",
+                "status": "pass",
+                "score": 5,
+                "evidence": "The submitted mockup shows a physical ceramic mug, with the printed artwork side facing directly toward the camera.",
+                "improvement": "No changes needed, requirement is fully satisfied."
+              },
+              {
+                "id": "mockup_consistency",
+                "status": "pass",
+                "score": 5,
+                "evidence": "The print on the mockup matches the flat design exactly, with an identical blue botanical line drawing and fully readable \"ALEX\" text.",
+                "improvement": "No changes needed, requirement is fully satisfied."
+              },
+              {
+                "id": "deliverable_video",
+                "status": "pass",
+                "score": 5,
+                "evidence": "The submitted asset is a ~5 second vertical (9:16 aspect ratio) product showcase video, with no audio track present.",
+                "improvement": "No changes needed, requirement is fully satisfied."
+              },
+              {
+                "id": "video_consistency",
+                "status": "pass",
+                "score": 5,
+                "evidence": "All frames of the video show the mug with consistent artwork, including clearly readable \"ALEX\" text and a matching blue botanical line drawing identical to the design.",
+                "improvement": "No changes needed, requirement is fully satisfied."
+              },
+              {
+                "id": "no_extra_content",
+                "status": "pass",
+                "score": 5,
+                "evidence": "None of the assets contain extra text, trademarks, logos, customer testimonials, or invented product claims.",
+                "improvement": "No changes needed, requirement is fully satisfied."
+              },
+              {
+                "id": "no_audio_present",
+                "status": "pass",
+                "score": 5,
+                "evidence": "The submitted video has no audio, music, or sound effects of any kind, it is a silent showcase.",
+                "improvement": "No changes needed, requirement is fully satisfied."
+              }
+            ],
+            "uncovered_requirements": [],
+            "release_checks": [
+              {
+                "name": "All required deliverables present",
+                "status": "pass",
+                "evidence": "All three requested deliverables (flat design, mockup, video) are submitted and meet specification."
+              },
+              {
+                "name": "Artwork consistency across all assets",
+                "status": "pass",
+                "evidence": "The botanical line art and ALEX text is identical and readable across design, mockup and video assets."
+              },
+              {
+                "name": "No prohibited content included",
+                "status": "pass",
+                "evidence": "No extra text, trademarks, audio or promotional content is present in any submitted asset."
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 9983,
+            "output_tokens": 1615,
+            "total_tokens": 11598,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 729
+            }
+          }
+        },
+        "audit_attempts": 1,
+        "audit": {
+          "report": {
+            "conflicts": [],
+            "uncovered_requirements": []
+          },
+          "usage": {
+            "input_tokens": 10683,
+            "output_tokens": 1760,
+            "total_tokens": 12443,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 1748
+            }
+          }
+        },
+        "review": {
+          "checks": [
+            {
+              "id": "deliverable_design",
+              "status": "pass",
+              "score": 5,
+              "evidence": "The submitted design asset is an isolated flat print artwork placed on a plain solid white canvas with no surrounding elements.",
+              "improvement": "No changes needed, requirement is fully satisfied.",
+              "name": "Isolated flat mug print artwork is presented on a plain solid white canvas with no surrounding elements",
+              "required": true,
+              "priority": 1,
+              "weight": 10
+            },
+            {
+              "id": "design_artwork_content",
+              "status": "pass",
+              "score": 5,
+              "evidence": "The flat design only contains a simple blue botanical line drawing and large clearly legible uppercase text reading exactly \"ALEX\", with no additional elements, extra text, or trademarks.",
+              "improvement": "No changes needed, requirement is fully satisfied.",
+              "name": "Flat design contains only a simple blue botanical line drawing plus large clearly legible uppercase text that reads exactly \"ALEX\" with no additional elements",
+              "required": true,
+              "priority": 1,
+              "weight": 15
+            },
+            {
+              "id": "deliverable_mockup",
+              "status": "pass",
+              "score": 5,
+              "evidence": "The submitted mockup shows a physical ceramic mug, with the printed artwork side facing directly toward the camera.",
+              "improvement": "No changes needed, requirement is fully satisfied.",
+              "name": "Lifestyle mockup shows a physical ceramic mug with the printed side facing directly toward the camera",
+              "required": true,
+              "priority": 1,
+              "weight": 10
+            },
+            {
+              "id": "mockup_consistency",
+              "status": "pass",
+              "score": 5,
+              "evidence": "The print on the mockup matches the flat design exactly, with an identical blue botanical line drawing and fully readable \"ALEX\" text.",
+              "improvement": "No changes needed, requirement is fully satisfied.",
+              "name": "Print on the mockup matches the flat design artwork exactly, including identical blue botanical line drawing and fully readable \"ALEX\" text",
+              "required": true,
+              "priority": 1,
+              "weight": 15
+            },
+            {
+              "id": "deliverable_video",
+              "status": "pass",
+              "score": 5,
+              "evidence": "The submitted asset is a ~5 second vertical (9:16 aspect ratio) product showcase video, with no audio track present.",
+              "improvement": "No changes needed, requirement is fully satisfied.",
+              "name": "A silent 5-second vertical (9:16 aspect ratio) product showcase video exists with no audio track",
+              "required": true,
+              "priority": 1,
+              "weight": 10
+            },
+            {
+              "id": "video_consistency",
+              "status": "pass",
+              "score": 5,
+              "evidence": "All frames of the video show the mug with consistent artwork, including clearly readable \"ALEX\" text and a matching blue botanical line drawing identical to the design.",
+              "improvement": "No changes needed, requirement is fully satisfied.",
+              "name": "All frames of the video show the mug with identical consistent artwork, including clearly readable \"ALEX\" text and matching blue botanical line drawing",
+              "required": true,
+              "priority": 1,
+              "weight": 15
+            },
+            {
+              "id": "no_extra_content",
+              "status": "pass",
+              "score": 5,
+              "evidence": "None of the assets contain extra text, trademarks, logos, customer testimonials, or invented product claims.",
+              "improvement": "No changes needed, requirement is fully satisfied.",
+              "name": "No asset contains extra text, trademarks, logos, customer testimonials, or invented product claims",
+              "required": true,
+              "priority": 2,
+              "weight": 10
+            },
+            {
+              "id": "no_audio_present",
+              "status": "pass",
+              "score": 5,
+              "evidence": "The submitted video has no audio, music, or sound effects of any kind, it is a silent showcase.",
+              "improvement": "No changes needed, requirement is fully satisfied.",
+              "name": "The video has no audio, music, or sound effects of any kind",
+              "required": true,
+              "priority": 2,
+              "weight": 5
+            }
+          ],
+          "score": 5,
+          "quality_gate": "passed",
+          "blocking_checks": [],
+          "uncovered_requirements": [],
+          "priority_fix": "Isolated flat mug print artwork is presented on a plain solid white canvas with no surrounding elements: No changes needed, requirement is fully satisfied.",
+          "release_checks": [
+            {
+              "name": "All required deliverables present",
+              "status": "pass",
+              "evidence": "All three requested deliverables (flat design, mockup, video) are submitted and meet specification."
+            },
+            {
+              "name": "Artwork consistency across all assets",
+              "status": "pass",
+              "evidence": "The botanical line art and ALEX text is identical and readable across design, mockup and video assets."
+            },
+            {
+              "name": "No prohibited content included",
+              "status": "pass",
+              "evidence": "No extra text, trademarks, audio or promotional content is present in any submitted asset."
+            }
+          ],
+          "review_source": "independent_evaluator"
+        },
+        "evidence": {
+          "text": "{\n  \"summary\": \"All required deliverables are successfully provided: the flat design artwork, lifestyle mug mockup, and 5-second vertical product showcase all meet requirements, artwork is consistent across all assets, no prohibited extra content is present.\",\n  \"checks\": [\n    {\n      \"id\": \"deliverable_design\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"The submitted design asset is an isolated flat print artwork placed on a plain solid white canvas with no surrounding elements.\",\n      \"improvement\": \"No changes needed, requirement is fully satisfied.\"\n    },\n    {\n      \"id\": \"design_artwork_content\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"The flat design only contains a simple blue botanical line drawing and large clearly legible uppercase text reading exactly \\\"ALEX\\\", with no additional elements, extra text, or trademarks.\",\n      \"improvement\": \"No changes needed, requirement is fully satisfied.\"\n    },\n    {\n      \"id\": \"deliverable_mockup\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"The submitted mockup shows a physical ceramic mug, with the printed artwork side facing directly toward the camera.\",\n      \"improvement\": \"No changes needed, requirement is fully satisfied.\"\n    },\n    {\n      \"id\": \"mockup_consistency\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"The print on the mockup matches the flat design exactly, with an identical blue botanical line drawing and fully readable \\\"ALEX\\\" text.\",\n      \"improvement\": \"No changes needed, requirement is fully satisfied.\"\n    },\n    {\n      \"id\": \"deliverable_video\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"The submitted asset is a ~5 second vertical (9:16 aspect ratio) product showcase video, with no audio track present.\",\n      \"improvement\": \"No changes needed, requirement is fully satisfied.\"\n    },\n    {\n      \"id\": \"video_consistency\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"All frames of the video show the mug with consistent artwork, including clearly readable \\\"ALEX\\\" text and a matching blue botanical line drawing identical to the design.\",\n      \"improvement\": \"No changes needed, requirement is fully satisfied.\"\n    },\n    {\n      \"id\": \"no_extra_content\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"None of the assets contain extra text, trademarks, logos, customer testimonials, or invented product claims.\",\n      \"improvement\": \"No changes needed, requirement is fully satisfied.\"\n    },\n    {\n      \"id\": \"no_audio_present\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"The submitted video has no audio, music, or sound effects of any kind, it is a silent showcase.\",\n      \"improvement\": \"No changes needed, requirement is fully satisfied.\"\n    }\n  ],\n  \"uncovered_requirements\": [],\n  \"release_checks\": [\n    {\n      \"name\": \"All required deliverables present\",\n      \"status\": \"pass\",\n      \"evidence\": \"All three requested deliverables (flat design, mockup, video) are submitted and meet specification.\"\n    },\n    {\n      \"name\": \"Artwork consistency across all assets\",\n      \"status\": \"pass\",\n      \"evidence\": \"The botanical line art and ALEX text is identical and readable across design, mockup and video assets.\"\n    },\n    {\n      \"name\": \"No prohibited content included\",\n      \"status\": \"pass\",\n      \"evidence\": \"No extra text, trademarks, audio or promotional content is present in any submitted asset.\"\n    }\n  ]\n}"
+        }
+      }
+    ],
+    "execution": "ma_cloud_skill",
+    "evidence_contract": 2,
+    "best_round": 2,
+    "return_policy": "required_pass_then_score_or_early_pass",
+    "result_summary": {
+      "selected_round": 2,
+      "score": 5,
+      "stop_reason": "completed",
+      "met_target": true,
+      "score_gap": 0,
+      "failed_checks": [],
+      "unverified_checks": [],
+      "uncovered_requirements": []
+    }
+  },
+  "files": [
+    {
+      "round": 1,
+      "phase": "design",
+      "file": "round-1-design.jpg",
+      "mime": "image/jpeg",
+      "bytes": 486112,
+      "sha256": "8660f33f41b82eb884859bd9d7cd7f8e23f48b53636e7c3169a97ba3f7b68249"
+    },
+    {
+      "round": 1,
+      "phase": "mockup",
+      "file": "round-1-mockup.jpg",
+      "mime": "image/jpeg",
+      "bytes": 801140,
+      "sha256": "44d061dc7a3443c55023c45f92bd5b3f69c72d15791735d77ee942b3de3c092e"
+    },
+    {
+      "round": 1,
+      "phase": "video",
+      "file": "round-1-video.mp4",
+      "mime": "video/mp4",
+      "bytes": 2714239,
+      "sha256": "3f6d6d8abacb1f7a7d1118bb321a8adec0dcb0a8c2aa9be5cd679cd1426eb5f2"
+    },
+    {
+      "round": 2,
+      "phase": "design",
+      "file": "round-2-design.jpg",
+      "mime": "image/jpeg",
+      "bytes": 634893,
+      "sha256": "6d008936fbe9b3c9a250f6f78b4dc98705acb78fa12ae329ec8697d4f0879ec1"
+    },
+    {
+      "round": 2,
+      "phase": "mockup",
+      "file": "round-2-mockup.jpg",
+      "mime": "image/jpeg",
+      "bytes": 517894,
+      "sha256": "8494569ceacb1ed9276f12d3dd76ecd3b212af7c999dd1228e90eff884cebf4d"
+    },
+    {
+      "round": 2,
+      "phase": "video",
+      "file": "round-2-video.mp4",
+      "mime": "video/mp4",
+      "bytes": 3178128,
+      "sha256": "fa001e86a77c4011878d801523bba523c9811a8cde20b41b05738e271f47f889"
+    }
+  ]
+}

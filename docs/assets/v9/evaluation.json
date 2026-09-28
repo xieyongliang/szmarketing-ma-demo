@@ -1,0 +1,278 @@
+{
+  "note": "Sanitized original v9 evaluation export. Original media downloads failed: AccessDenied / Request has expired. No new generation was performed.",
+  "run_created": "2026-09-26T06:53:19.142Z",
+  "brief": {
+    "name": "MA Cloud v9 required-first retest",
+    "product": "Mug",
+    "platform": "TikTok",
+    "audience": "US gift shoppers, ages 25–44",
+    "brief": "Create an original personalized ceramic mug gift with a simple blue botanical line drawing and the exact large text ALEX. Deliver isolated flat print artwork on a plain white canvas, a lifestyle mockup with the print facing the camera, and a silent 5-second vertical product showcase. Keep the exact artwork and ALEX lettering readable and consistent across all assets. No extra text, trademarks, music, invented claims or customer testimonials."
+  },
+  "limits": {
+    "max_rounds": 3,
+    "target_score": 4.5,
+    "watermark": false
+  },
+  "status": "completed",
+  "return_policy": "required_pass_then_score_or_early_pass",
+  "result_summary": {
+    "selected_round": 1,
+    "score": 5,
+    "stop_reason": "completed",
+    "met_target": true,
+    "score_gap": 0,
+    "failed_checks": [],
+    "unverified_checks": [],
+    "uncovered_requirements": []
+  },
+  "criteria": [
+    {
+      "id": "design_artwork_spec",
+      "description": "Flat print artwork is isolated on a plain white canvas, features a ceramic mug design with simple blue botanical line drawing and large clearly legible exact uppercase text 'ALEX', no extra text, marks or elements present.",
+      "source_requirement": "Brief requirement for isolated flat print artwork with blue botanical line drawing and exact ALEX text",
+      "required": true,
+      "priority": 1,
+      "weight": 3,
+      "asset_refs": [
+        "design"
+      ]
+    },
+    {
+      "id": "mockup_consistency",
+      "description": "Lifestyle mug mockup displays the exact same print artwork, the printed side faces directly toward the camera, no deviations in botanical line drawing or 'ALEX' lettering from the original design.",
+      "source_requirement": "Brief requirement for consistent mockup with print facing camera",
+      "required": true,
+      "priority": 1,
+      "weight": 3,
+      "asset_refs": [
+        "mockup"
+      ]
+    },
+    {
+      "id": "video_spec_compliance",
+      "description": "Delivered video is a silent 5-second vertical 9:16 product showcase, the mug has identical consistent artwork, 'ALEX' text remains fully readable at all points, no audio, no music, no sound effects.",
+      "source_requirement": "Brief requirement for silent 5-second vertical product showcase with consistent assets",
+      "required": true,
+      "priority": 1,
+      "weight": 3,
+      "asset_refs": [
+        "video"
+      ]
+    },
+    {
+      "id": "no_unauthorized_content",
+      "description": "No extra text, trademarks, logos, customer testimonials, invented product claims or unrelated markings appear on any of the three deliverable assets.",
+      "source_requirement": "Brief requirement forbidding extra text, trademarks, music or invented claims",
+      "required": true,
+      "priority": 2,
+      "weight": 2,
+      "asset_refs": [
+        "design",
+        "mockup",
+        "video"
+      ]
+    },
+    {
+      "id": "gift_aesthetic_alignment",
+      "description": "Overall artwork style is clean, minimal and appropriate for personalized gift products targeted at US 25-44 age group TikTok gift shoppers.",
+      "source_requirement": "Audience targeting context for the campaign",
+      "required": false,
+      "priority": 3,
+      "weight": 1,
+      "asset_refs": [
+        "design",
+        "mockup",
+        "video"
+      ]
+    }
+  ],
+  "research": [],
+  "rounds": [
+    {
+      "number": 1,
+      "prompts": {
+        "design": "Isolated flat print artwork on a completely plain pure white background, minimalist personalized ceramic mug design: simple thin uniform blue botanical line drawing surrounding large bold uppercase perfectly legible text 'ALEX'. No other text, no logos, no shadows, no extra decorative elements, clean flat 2D vector line art style.",
+        "mockup": "Photorealistic lifestyle product mockup of a matte white ceramic mug printed with the exact reference design: simple blue botanical line drawing and large clear 'ALEX' text, the printed side of the mug faces directly toward the camera, soft neutral indoor gift setting, no objects obscuring the design, natural even lighting.",
+        "video": "Silent 5-second vertical 9:16 product showcase video of the ceramic mug with consistent identical reference print: slow smooth subtle rotation that keeps the 'ALEX' text and blue botanical artwork clearly visible and fully readable at all times, no audio, no music, no text overlays, plain neutral light background."
+      },
+      "evaluation": {
+        "report": {
+          "summary": "All required deliverables fully meet the acceptance criteria. The flat artwork, lifestyle mockup, and 5-second vertical product video have consistent matching design with blue botanical line art and clearly legible 'ALEX' text, no unauthorized content, and align with the target personalized gift audience for US TikTok shoppers ages 25-44.",
+          "checks": [
+            {
+              "id": "design_artwork_spec",
+              "status": "pass",
+              "score": 5,
+              "evidence": "The flat print artwork is isolated on a plain white canvas, features a ceramic mug design with a simple blue botanical line drawing wreath, large clearly legible uppercase 'ALEX' text, with no extra text, marks or additional elements present.",
+              "improvement": "No improvements required, the design fully matches the specification."
+            },
+            {
+              "id": "mockup_consistency",
+              "status": "pass",
+              "score": 5,
+              "evidence": "The lifestyle mug mockup displays the exact same blue botanical wreath and 'ALEX' artwork as the original flat design, the printed side faces directly toward the camera with no deviations to the line drawing or lettering.",
+              "improvement": "No improvements required, the mockup is fully consistent with the original design."
+            },
+            {
+              "id": "video_spec_compliance",
+              "status": "pass",
+              "score": 5,
+              "evidence": "The delivered video is a silent ~5 second vertical 9:16 product showcase, the mug displays identical consistent artwork, 'ALEX' text remains fully readable across all video frames, no audio, music or sound effects are present.",
+              "improvement": "No improvements required, the video meets all specification requirements."
+            },
+            {
+              "id": "no_unauthorized_content",
+              "status": "pass",
+              "score": 5,
+              "evidence": "Across all three deliverable assets, there are no extra text, trademarks, logos, customer testimonials, invented product claims or unrelated markings present.",
+              "improvement": "No improvements required, no unauthorized content exists on the deliverables."
+            },
+            {
+              "id": "gift_aesthetic_alignment",
+              "status": "pass",
+              "score": 5,
+              "evidence": "The overall artwork style is clean, minimal and classic, appropriate for a personalized ceramic mug gift targeted at US 25-44 year old TikTok gift shoppers.",
+              "improvement": "No improvements required, the aesthetic is well aligned to the target audience."
+            }
+          ],
+          "uncovered_requirements": [],
+          "release_checks": [
+            {
+              "name": "All required deliverables provided",
+              "status": "pass",
+              "evidence": "Isolated flat artwork, lifestyle mockup, and 5-second vertical product video are all delivered as requested in the brief."
+            },
+            {
+              "name": "Artwork consistency across all assets",
+              "status": "pass",
+              "evidence": "Botanical line drawing, 'ALEX' lettering and layout are identical across the design, mockup and video assets."
+            },
+            {
+              "name": "No prohibited content present",
+              "status": "pass",
+              "evidence": "No extra text, trademarks, audio, unapproved claims or testimonials appear on any of the deliverables."
+            }
+          ]
+        },
+        "usage": {
+          "input_tokens": 9831,
+          "output_tokens": 2013,
+          "total_tokens": 11844,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens_details": {
+            "reasoning_tokens": 1240
+          }
+        }
+      },
+      "audit": {
+        "report": {
+          "conflicts": [],
+          "uncovered_requirements": []
+        },
+        "usage": {
+          "input_tokens": 10463,
+          "output_tokens": 308,
+          "total_tokens": 10771,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens_details": {
+            "reasoning_tokens": 296
+          }
+        }
+      },
+      "review": {
+        "checks": [
+          {
+            "id": "design_artwork_spec",
+            "status": "pass",
+            "score": 5,
+            "evidence": "The flat print artwork is isolated on a plain white canvas, features a ceramic mug design with a simple blue botanical line drawing wreath, large clearly legible uppercase 'ALEX' text, with no extra text, marks or additional elements present.",
+            "improvement": "No improvements required, the design fully matches the specification.",
+            "name": "Flat print artwork is isolated on a plain white canvas, features a ceramic mug design with simple blue botanical line drawing and large clearly legible exact uppercase text 'ALEX', no extra text, marks or elements present.",
+            "required": true,
+            "priority": 1,
+            "weight": 3
+          },
+          {
+            "id": "mockup_consistency",
+            "status": "pass",
+            "score": 5,
+            "evidence": "The lifestyle mug mockup displays the exact same blue botanical wreath and 'ALEX' artwork as the original flat design, the printed side faces directly toward the camera with no deviations to the line drawing or lettering.",
+            "improvement": "No improvements required, the mockup is fully consistent with the original design.",
+            "name": "Lifestyle mug mockup displays the exact same print artwork, the printed side faces directly toward the camera, no deviations in botanical line drawing or 'ALEX' lettering from the original design.",
+            "required": true,
+            "priority": 1,
+            "weight": 3
+          },
+          {
+            "id": "video_spec_compliance",
+            "status": "pass",
+            "score": 5,
+            "evidence": "The delivered video is a silent ~5 second vertical 9:16 product showcase, the mug displays identical consistent artwork, 'ALEX' text remains fully readable across all video frames, no audio, music or sound effects are present.",
+            "improvement": "No improvements required, the video meets all specification requirements.",
+            "name": "Delivered video is a silent 5-second vertical 9:16 product showcase, the mug has identical consistent artwork, 'ALEX' text remains fully readable at all points, no audio, no music, no sound effects.",
+            "required": true,
+            "priority": 1,
+            "weight": 3
+          },
+          {
+            "id": "no_unauthorized_content",
+            "status": "pass",
+            "score": 5,
+            "evidence": "Across all three deliverable assets, there are no extra text, trademarks, logos, customer testimonials, invented product claims or unrelated markings present.",
+            "improvement": "No improvements required, no unauthorized content exists on the deliverables.",
+            "name": "No extra text, trademarks, logos, customer testimonials, invented product claims or unrelated markings appear on any of the three deliverable assets.",
+            "required": true,
+            "priority": 2,
+            "weight": 2
+          },
+          {
+            "id": "gift_aesthetic_alignment",
+            "status": "pass",
+            "score": 5,
+            "evidence": "The overall artwork style is clean, minimal and classic, appropriate for a personalized ceramic mug gift targeted at US 25-44 year old TikTok gift shoppers.",
+            "improvement": "No improvements required, the aesthetic is well aligned to the target audience.",
+            "name": "Overall artwork style is clean, minimal and appropriate for personalized gift products targeted at US 25-44 age group TikTok gift shoppers.",
+            "required": false,
+            "priority": 3,
+            "weight": 1
+          }
+        ],
+        "score": 5,
+        "quality_gate": "passed",
+        "blocking_checks": [],
+        "uncovered_requirements": [],
+        "priority_fix": "Flat print artwork is isolated on a plain white canvas, features a ceramic mug design with simple blue botanical line drawing and large clearly legible exact uppercase text 'ALEX', no extra text, marks or elements present.: No improvements required, the design fully matches the specification.",
+        "release_checks": [
+          {
+            "name": "All required deliverables provided",
+            "status": "pass",
+            "evidence": "Isolated flat artwork, lifestyle mockup, and 5-second vertical product video are all delivered as requested in the brief."
+          },
+          {
+            "name": "Artwork consistency across all assets",
+            "status": "pass",
+            "evidence": "Botanical line drawing, 'ALEX' lettering and layout are identical across the design, mockup and video assets."
+          },
+          {
+            "name": "No prohibited content present",
+            "status": "pass",
+            "evidence": "No extra text, trademarks, audio, unapproved claims or testimonials appear on any of the deliverables."
+          }
+        ],
+        "review_source": "independent_evaluator"
+      },
+      "evidence": {
+        "text": "{\n  \"summary\": \"All required deliverables fully meet the acceptance criteria. The flat artwork, lifestyle mockup, and 5-second vertical product video have consistent matching design with blue botanical line art and clearly legible 'ALEX' text, no unauthorized content, and align with the target personalized gift audience for US TikTok shoppers ages 25-44.\",\n  \"checks\": [\n    {\n      \"id\": \"design_artwork_spec\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"The flat print artwork is isolated on a plain white canvas, features a ceramic mug design with a simple blue botanical line drawing wreath, large clearly legible uppercase 'ALEX' text, with no extra text, marks or additional elements present.\",\n      \"improvement\": \"No improvements required, the design fully matches the specification.\"\n    },\n    {\n      \"id\": \"mockup_consistency\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"The lifestyle mug mockup displays the exact same blue botanical wreath and 'ALEX' artwork as the original flat design, the printed side faces directly toward the camera with no deviations to the line drawing or lettering.\",\n      \"improvement\": \"No improvements required, the mockup is fully consistent with the original design.\"\n    },\n    {\n      \"id\": \"video_spec_compliance\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"The delivered video is a silent ~5 second vertical 9:16 product showcase, the mug displays identical consistent artwork, 'ALEX' text remains fully readable across all video frames, no audio, music or sound effects are present.\",\n      \"improvement\": \"No improvements required, the video meets all specification requirements.\"\n    },\n    {\n      \"id\": \"no_unauthorized_content\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"Across all three deliverable assets, there are no extra text, trademarks, logos, customer testimonials, invented product claims or unrelated markings present.\",\n      \"improvement\": \"No improvements required, no unauthorized content exists on the deliverables.\"\n    },\n    {\n      \"id\": \"gift_aesthetic_alignment\",\n      \"status\": \"pass\",\n      \"score\": 5,\n      \"evidence\": \"The overall artwork style is clean, minimal and classic, appropriate for a personalized ceramic mug gift targeted at US 25-44 year old TikTok gift shoppers.\",\n      \"improvement\": \"No improvements required, the aesthetic is well aligned to the target audience.\"\n    }\n  ],\n  \"uncovered_requirements\": [],\n  \"release_checks\": [\n    {\n      \"name\": \"All required deliverables provided\",\n      \"status\": \"pass\",\n      \"evidence\": \"Isolated flat artwork, lifestyle mockup, and 5-second vertical product video are all delivered as requested in the brief.\"\n    },\n    {\n      \"name\": \"Artwork consistency across all assets\",\n      \"status\": \"pass\",\n      \"evidence\": \"Botanical line drawing, 'ALEX' lettering and layout are identical across the design, mockup and video assets.\"\n    },\n    {\n      \"name\": \"No prohibited content present\",\n      \"status\": \"pass\",\n      \"evidence\": \"No extra text, trademarks, audio, unapproved claims or testimonials appear on any of the deliverables.\"\n    }\n  ]\n}"
+      }
+    }
+  ],
+  "media_availability": {
+    "design": "signed URL expired",
+    "mockup": "signed URL expired",
+    "video": "task query still returns inaccessible URL"
+  }
+}

@@ -2,9 +2,11 @@
 
 [Chinese version](CUSTOMER_DEMO_ZH.md)
 
+[UI screenshots, asset sources, and file availability](#10-frontend-ui-and-asset-sources)
+
 This guide explains how to deploy and reproduce SZ Creative Studio. ArkCLI deploys the Managed Agent (MA), Cloud Environment, and Skill. Users submit a brief through the web UI; MA generates images and video, evaluates the actual assets, audits the findings, and revises the creative when needed.
 
-**Verified baseline: September 26, 2026, Agent / Skill v9.** The real cloud run received a model score of **5/5 in round 1**, passed all required checks, and returned immediately with status `completed`. Settings were three maximum rounds, a 4.5/5 target, and watermark disabled. Generated assets and scores may differ on another run.
+**Verified baseline: September 28, 2026, Agent / Skill v9.** The real cloud run improved from **3.33/5 in round 1 to 5/5 in round 2**, then stopped after all required checks passed. Settings were three maximum rounds, a 4.5/5 target, and watermark disabled. Four images and two videos are archived. Generated assets and scores may differ on another run.
 
 Model acceptance is not human visual approval, print-production approval, copyright clearance, or platform publishing approval. Distribute this guide with the source code. Section 9 explains the verification boundaries.
 
@@ -293,41 +295,20 @@ Exports may contain customer briefs, Session IDs, and signed asset URLs. Review 
 
 Quality rounds and API retries are separate limits. Three rounds do not mean three API calls or a fixed spending cap.
 
-## 9. Actual v9 Test Results
+## 9. Real Cloud Retest: September 28, 2026
 
-### 9.1 Configuration and Execution
+The run reused Agent / Skill v9 with three maximum rounds, a 4.5/5 target, and watermark disabled. MA derived and froze eight required criteria from the same brief. Two rounds and 127 events were recorded; each round generated two images and one video and completed independent evaluation and consistency audit. Neither audit found conflicts, so adjudication was not invoked.
 
-| Item | Observed value |
-| --- | --- |
-| Agent / Skill | v9 / v9 in the test account; new accounts use their returned versions |
-| Product / platform | Mug / TikTok |
-| Maximum rounds / target | 3 / 4.5 |
-| Watermark | false, matching the request and export |
-| Dynamic criteria | Five: four required, one optional |
-| Rounds executed | One |
-| Outputs | One print-design image, one mockup, one video |
-| Review process | Independent evaluation and consistency audit |
-| Audit conflicts | None; no adjudication requested |
-| Status / selected round / score | completed / 1 / 5 |
-| Observed events | 62 |
-
-The following are model-reported judgments, not an additional human inspection:
-
-| Check | Type | Weight | Status / score |
+| Round | Model score | Required-item gate | Action |
 | --- | --- | --- | --- |
-| Isolated white-background artwork, blue botanical drawing, and ALEX text | Required | 3 | pass / 5 |
-| Mockup consistency with the print facing the camera | Required | 3 | pass / 5 |
-| Silent five-second 9:16 video and artwork consistency | Required | 3 | pass / 5 |
-| No additional text, trademarks, invented claims, or other prohibited content | Required | 2 | pass / 5 |
-| Gift aesthetic and audience alignment | Optional | 1 | pass / 5 |
+| 1 | 3.333333/5 | blocked | Design deliverable contained a rendered mug instead of isolated flat artwork; MA revised the prompts |
+| 2 | 5/5 | passed | All eight required criteria passed; the target was met and execution stopped early |
 
-### 9.2 Returned Summary
-
-The full export contains asset links and evidence. This is the actual `result_summary`, excluding private resource IDs, keys, and signed URLs:
+Round 3 was not executed. The return policy was `required_pass_then_score_or_early_pass`, selecting round 2:
 
 ```json
 {
-  "selected_round": 1,
+  "selected_round": 2,
   "score": 5,
   "stop_reason": "completed",
   "met_target": true,
@@ -338,24 +319,84 @@ The full export contains asset links and evidence. This is the actual `result_su
 }
 ```
 
-The return policy was `required_pass_then_score_or_early_pass`. Rounds 2 and 3 were not generated. At the round limit, reports describe the selected round's remaining issues, not a merged list of every historical defect. If required checks pass but the score is below target, failure arrays may be empty; still inspect `met_target` and `score_gap`.
+This run exercised defect detection, prompt revision, regeneration, independent evaluation, audit, and early stopping. It did not exercise conflict adjudication or selection at the round limit; local tests are not a substitute for those cloud branches.
+
+### 9.1 Before and After
+
+Round 1 included a physical mug in the design deliverable and failed acceptance:
+
+![Round 1 design containing a rendered mug](docs/assets/retest-20260928/round-1-design.jpg)
+
+Round 2 produced isolated blue botanical artwork and ALEX lettering without a mug render:
+
+![Round 2 isolated print artwork](docs/assets/retest-20260928/round-2-design.jpg)
+
+Round 2 product mockup:
+
+![Round 2 product mockup](docs/assets/retest-20260928/round-2-mockup.jpg)
+
+Round 2 video: click the poster to open the original MP4.
+
+[![Round 2 video poster](docs/assets/retest-20260928/round-2-video-poster.jpg)](docs/assets/retest-20260928/round-2-video.mp4)
+
+File inspection found both videos to be 720x1280, approximately 5.041667 seconds, with no audio stream. This confirms dimensions, duration, and audio-stream status, not frame-by-frame visual quality, rights clearance, or publication approval.
+
+### 9.2 All Assets and Reports
+
+| Round | Design | Mockup | Video |
+| --- | --- | --- | --- |
+| 1 | [JPG](docs/assets/retest-20260928/round-1-design.jpg) | [JPG](docs/assets/retest-20260928/round-1-mockup.jpg) | [MP4](docs/assets/retest-20260928/round-1-video.mp4) |
+| 2 (selected) | [JPG](docs/assets/retest-20260928/round-2-design.jpg) | [JPG](docs/assets/retest-20260928/round-2-mockup.jpg) | [MP4](docs/assets/retest-20260928/round-2-video.mp4) |
+
+[Download the sanitized report and per-round prompts](docs/assets/retest-20260928/result.json). It includes the brief, frozen criteria, evaluations, audits, final selection, file sizes, and SHA-256 checksums. Private resource IDs and signed URLs were removed. This documentation copy cannot be used to revalidate the original cloud manifest.
+
+All media is archived locally as original files rather than temporary signed links. Archive a reproduced run immediately after completion:
+
+```bash
+node archive-campaign.mjs <CAMPAIGN_ID> <ARCHIVE_NAME>
+```
+
+The output is `docs/assets/<ARCHIVE_NAME>/`. The command downloads and exports only; it does not generate media. Download failures cause an error rather than a false complete-archive claim.
 
 ### 9.3 Verification Boundaries
 
-- Verified: real cloud generation, independent evaluation, audit, early stopping after a first-round pass, successful export, and backend validation. The watermark parameter was false.
-- Not exercised in this run: later revision rounds, conflict adjudication, or selection at the round limit.
-- Local coverage: 55 tests, comprising 26 Node.js and 29 Python tests, including required-pass priority, highest-score fallback, earlier-round tie handling, and early acceptance. Mocked model tests do not prove media quality.
-- The export contained `research=[]`. This run does not establish market research, competitor sales analysis, or live trend analysis.
-- No additional human frame-by-frame inspection, independent video metadata check, browser media playback/download verification, print-specification approval, copyright clearance, or platform approval was completed for this run. A model score of 5 does not resolve earlier browser preview or download issues.
-- Models and dynamically derived criteria can still misinterpret requirements, particularly the distinction between isolated artwork and a product image of a mug. Inspect the actual assets rather than relying only on the score.
-- Request parameters are not observed media facts. Disabling the optional watermark does not imply removing provenance information or waiving disclosure requirements.
+- The export contained `research=[]`; market research, competitor sales, and live trends were not verified.
+- The 5/5 result is a model score. Inspection of the original design images confirmed the visible difference between rounds, not print-production acceptance, frame-by-frame review, copyright clearance, or platform approval.
+- Independent evaluation, audit, and dynamic criteria can still misjudge content. Production deliverables need human review.
+- Local regression coverage comprises 55 tests: 26 Node.js and 29 Python tests. This does not guarantee repeatable media scores.
+- Watermark was disabled; this does not imply removing provenance information or waiving disclosure requirements.
+- These files and results belong to the September 28 run, not the expired September 26 media.
 
-The initial message submission timed out locally, but the cloud had accepted it. During recovery, the backend confirmed that the existing message matched the Campaign brief and settings, then resumed observation without resubmitting the task. A local timeout alone is not a reason to generate again.
+## 10. Frontend UI and Asset Sources
 
-## 10. Demo and Production Boundaries
+The Workspace now shows only the latest Campaign. Older Campaigns are archived locally, not deleted. Round 1 remains available under Previous versions within the latest Campaign.
 
-This is a creative-generation and evaluation prototype. It does not include automatic ad placement, live competitor-sales integrations, factory print delivery, or automatic publishing. Its connectors produce two images and one five-second vertical video; dynamic criteria do not imply support for arbitrary deliverable types.
+![Latest Workspace showing round 2 acceptance](docs/assets/ui-workspace.png)
 
-A suitable customer summary is: "MA runs generation and model evaluation in the cloud. This test passed model acceptance in round 1 and stopped early. When results fall short, it can revise them; at the limit, it prioritizes rounds that pass required checks, returns the best available result, and lists remaining issues." Do not promise a score of 5 or publication-ready assets on every run.
+![Independent evaluation and audit](docs/assets/ui-review.png)
 
-Production deployment additionally requires access control, appropriate secret management, durable asset storage, cost controls, observability, and human approval. Exclude private `.env`, `data/`, authentication caches, and signed URLs from any source handoff. Customers should use their own resources.
+![Generated design displayed in the UI](docs/assets/ui-design.png)
+
+![Generated video displayed in the UI](docs/assets/ui-video.png)
+
+Configuration form example, filled without submitting an additional generation task for the screenshot:
+
+![Campaign settings: three rounds, target 4.5, watermark disabled](docs/assets/ui-campaign-setup.png)
+
+### Reference Material
+
+The generation dependency chain is **user brief -> generated design -> mockup using that design -> video using the generated mockup**. The design and mockup shown above are therefore both deliverables and inputs to later stages. No additional customer image, video, or audio was uploaded.
+
+![Decorative UI mug photograph, not a generation input](docs/assets/ui-reference-mug.jpg)
+
+This photograph comes from the [Unsplash image URL](https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=1000&auto=format&fit=crop&q=85) referenced by `public/index.html`. It is UI decoration, not a model input or competitor/market-research evidence. Rights remain with the respective rights holder; confirm applicable permissions before redistribution.
+
+See the [asset inventory](docs/assets/README.md) for provenance.
+
+## 11. Demo and Production Boundaries
+
+This prototype does not include automatic ad placement, live competitor-sales integrations, factory print delivery, or automatic publishing. Its connectors produce two images and one five-second vertical video per round; dynamic criteria do not imply arbitrary deliverable support.
+
+A suitable customer summary is: "MA generates and independently evaluates assets in the cloud, then revises them based on defects. This run improved from 3.33 in round 1 to 5 in round 2, stopped after acceptance, and archived both rounds for review." Do not promise a score of 5 or unattended publication on every run.
+
+Production additionally requires access control, appropriate secret management, durable asset storage, cost controls, observability, and human approval. Review customer briefs, assets, and evaluation text before sharing. Exclude private `.env`, `data/`, authentication caches, and signed URLs.

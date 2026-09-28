@@ -1,0 +1,30 @@
+{
+  "round-1": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 720,
+        "height": 1280
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  },
+  "round-2": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 720,
+        "height": 1280
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}
